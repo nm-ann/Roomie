@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+	<h1>{{title}}</h1>
+	<hr>
+	{% if rooms|length > 0 %}
+		<table class="table table-striped table-hover">
+			<tr>
+				<th>Room Number</th>
+				<th>Person 1</th>
+				<th>Person 2</th>
+				<th>Person 3</th>
+				<th>Person 4</th>
+			</tr>
+			{% for room in rooms %}
+				<tr>
+					<td>{{loop.index}}</td>
+					{% for i in range (room|length) %}
+						<td>{{room[i]}}</td>
+					{% endfor %}
+					{% if room|length < 4 %}
+						{% for i in range(4 - room|length) %}
+							<td></td>
+						{% endfor %}
+					{% endif %}
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+{% endblock %}
