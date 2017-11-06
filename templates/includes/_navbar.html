@@ -12,11 +12,12 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         {% if session.logged_in %}
+        <li><a>Welcome, {{session.username}}</a></li>
         <li><a href="/forms">Forms</a></li>
-        <li><a href="/logout">Log out</a></li>
+        <li><a href="/logout">Log Out</a></li>
         {% else %}
           <li> <a href="/register">Register</a></li>
-          <li><a href="/login">Log in</a></li>
+          <li><a href="/login">Log In</a></li>
         {% endif %}
       </ul>
     </div><!--/.nav-collapse -->

@@ -1,6 +1,11 @@
 {% extends 'layout.html' %}
 {% block body %}
-	<h1>Forms</h1>
+<header id="header">
+	<div class="container">
+		<h1>Forms</h1>
+	</div>
+</header>
+<div class="container">
 	<a class="btn btn-primary" href="/add_form">Add Form</a>
 	<hr>
 	{% if forms|length > 0 %}
@@ -29,4 +34,5 @@
 			{% endfor %}
 		</table>
 	{% endif %}
+</div>
 {% endblock %}
